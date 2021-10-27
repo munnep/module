@@ -2,7 +2,7 @@
 
 Modules are containers for multiple resources that are used together. [See documentation](https://www.terraform.io/docs/language/modules/sources.html) 
 
-In this example will call one module to create 2 different resources. 
+In this example you call on one module to create 2 different resources. 
 
 # Prerequisites
 
