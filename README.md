@@ -1,8 +1,7 @@
 # Example: Module with Terraform
 
-Modules are containers for multiple resources that are used together. [See documentation](https://www.terraform.io/docs/language/modules/sources.html) 
+Modules [See documentation](https://www.terraform.io/docs/language/modules/sources.html) 
 
-In this example you call on one module to create 2 different resources. 
 
 # Prerequisites
 
@@ -11,39 +10,37 @@ See the following documentation [How to install Terraform](https://learn.hashico
 
 # How to
 
-1. Clone the repository to your local machine
+1. Create terraform file that uses this repo as module
 ```
-git clone https://github.com/munnep/module
+module "mymodule" {
+  source = "github.com/munnep/module"
+}
 ```
-2. Change your directory
-```
-cd module
-```
-3. Terraform initialize
+2. Terraform initialize
 ```
 terraform init
 ```
-5. Terraform plan
+3. Terraform plan
 ```
 terraform plan
 ```
-6. Terraform apply
+4. Terraform apply
 ```
 terraform apply
 ```
-7. Sample output
+5. Sample output
 ```
 ...
 ...
 ...
-  # module.random.random_pet.pet will be created
+  # module.mymodule.random_pet.pet will be created
   + resource "random_pet" "pet" {
       + id        = (known after apply)
       + length    = 2
       + separator = "-"
     }
 
-  # module.random.random_string.string will be created
+  # module.mymodule.random_string.string will be created
   + resource "random_string" "string" {
       + id          = (known after apply)
       + length      = 16
